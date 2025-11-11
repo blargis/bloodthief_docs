@@ -1,0 +1,4 @@
+site_name: Bloodthief Docs
+site_url: https://blargis.github.io/bloodthief_docs
+theme:
+  name: material
