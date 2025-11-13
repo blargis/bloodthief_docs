@@ -33,6 +33,3 @@ You will use the clip texture a lot. I assigned a hotkey so I don’t have to fi
 
 ![render_bad.gif](attachments/render_bad.gif)
 
-
-### How do I delete my own custom maps?
-* Just delete the folder. Then go to Steam Workshop and delete the workshop entry.
