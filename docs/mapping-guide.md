@@ -82,3 +82,13 @@ Simply give all the enemies shielded by a mage the same `bubble_shield_id` and t
 4. Now the door will open when we go in the trigger area-  but we want to require that you have the key first!
 5. To make it so the key is required, put your unique key name in the `required_keys_comma_sep` field of the vt_trigger_area. Now the trigger wont fire until you have the key. 
 6. To require multiple keys, simply put them all in the `required_keys_comma_sep` field, separated by a comma, like this `key1,key2,key3,key4`. Now all 4 of those keys will be required to open the door. Make sure there is a corresponding `vt_key_pickup` with `key_name` set for each of those 4 keys!  
+
+### Why is the collision for my vt_breakable not working? 
+Breakables need to be **one brush per breakable**. For example, this will not work:
+
+
+![Breakables](attachments/bad_breakable.png)
+
+Notice how there are two shapes/brushes, but both are assigned to one overarching "breakable" entity. You need to break these up into two breakables. You can do this by clicking on one of the shapes and assigning that singular shape to it's own breakable. Now it will look like this, which is correct:
+
+![good_breakable](attachments/good_breakable.png)

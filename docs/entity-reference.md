@@ -33,6 +33,17 @@ All enemies pretty much share the same properties, so they will be lumped togeth
         * Applies a red shield. The player can’t touch this shield or they will be damaged
 
 
+!!!info "Enemy Functions"
+    *  When a trigger targets an enemy, it can specify a `target_func` to do something in particular. By default when an enemy is triggered, they "unhide" if hidden, and be come aggroed, ie. they will immediately start pursuing and attacking the player. 
+    * Possible functions:
+	    * hide_me
+		    * Instantly makes the enemy disappear completely. Basically "deletes" the enemy except they will come back when the player restarts.
+		* trigger_kill_me
+			* Kills the enemy (with death anims and blood)
+		* \_kill_me
+			* Same thing as trigger_kill_me, but this one must be used for vt_spider entities.
+
+
 * #### vt_generic_knight
 * #### vt_bow_knight
 * #### vt_armored_bow_knight
@@ -90,16 +101,16 @@ All enemies pretty much share the same properties, so they will be lumped togeth
 
     !!!info "Key Properties"
         * artifact_part_name
-            * NO_ARTIFACT_NAM
-            * RUSTY_BLADE_POMME
-            * DRAGON_TOOTH_SCABBAR
-            * BATTERED_SOUL_OF_PRISONE
-            * RUSTY_IRON_RO
-            * BENJIS_STIC
-            * ORNATE_BLADE_PART_
-            * ORNATE_BLADE_PART_
-            * STONE_SWORD_PART_
-            * STONE_SWORD_PART_
+            * NO_ARTIFACT_NAME
+            * RUSTY_BLADE_POMMEL
+            * DRAGON_TOOTH_SCABBARD
+            * BATTERED_SOUL_OF_PRISONER
+            * RUSTY_IRON_ROD
+            * BENJIS_STICK
+            * ORNATE_BLADE_PART_1
+            * ORNATE_BLADE_PART_2
+            * STONE_SWORD_PART_1
+            * STONE_SWORD_PART_2
             * STONE_SWORD_PART_3
             * GLURMS_WALKING_STICK
             * GLURMS_NOTES
@@ -716,5 +727,7 @@ Brush entities are entities that are based on a brush, ie. some volume of space 
             * The target function to call
         * is_enemy_trigger
             * 1: This trigger area triggers when enemies enter it, instead of when the player enters it.
-        * vt_water
-            * Creates water that the player can swim in
+
+
+### vt_water
+* Creates water that the player can swim in
