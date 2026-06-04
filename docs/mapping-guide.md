@@ -3,7 +3,7 @@ This guide is meant to be used like a wiki for you to reference for all your map
 
 ## Get Started
 * [Watch the official get started tutorial](https://youtu.be/09mth4fUaH0)
-* [Bloodthief mapping assets](https://drive.google.com/file/d/1IHrSjtdWp4tyQuInjpUgVuiSBSwXTLnh/view?usp=drive_link)
+* [Bloodthief mapping assets](https://drive.google.com/file/d/1EJCwpfn2qqMdu4Z0kc1seRDttNC1SqMr/view?usp=drive_link)
 * [Example Map - Time Tomb](https://drive.google.com/file/d/1ug1_SbQ-79RKrOdk9USPT0Q1SCSGNpa7/view?usp=drive_link)
 * [Trenchbroom Manual](https://trenchbroom.github.io/manual/latest/)
 * [Dumptruck_ds Trenchbroom Tutorial Series](https://www.youtube.com/watch?v=gONePWocbqA&list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE&index=1)
