@@ -83,6 +83,26 @@ Simply give all the enemies shielded by a mage the same `bubble_shield_id` and t
 5. To make it so the key is required, put your unique key name in the `required_keys_comma_sep` field of the vt_trigger_area. Now the trigger wont fire until you have the key. 
 6. To require multiple keys, simply put them all in the `required_keys_comma_sep` field, separated by a comma, like this `key1,key2,key3,key4`. Now all 4 of those keys will be required to open the door. Make sure there is a corresponding `vt_key_pickup` with `key_name` set for each of those 4 keys!  
 
+### How do I use custom textures in my map?
+
+1. Go to the `textures` folder inside your `BloodthiefMapping` game folder (the one you set up in [Getting Set Up](getting-set-up)). Create a new folder there called `custom`.
+2. Put your texture image files inside that `custom` folder. They'll now show up in Trenchbroom's texture browser under `custom/` so you can paint your brushes with them.
+3. To make the textures actually appear in-game, copy that entire `custom` folder into your map's folder, inside a folder called `textures`. So the final structure should look like this:
+
+```
+<your map folder>/
+	YourMap.map
+	textures/
+		custom/
+			your_texture.png
+			another_texture.png
+```
+
+You can open your map's folder from the pause menu in-game via "Open Map Data Folder". Once the `textures/custom` folder is in place, your custom textures will render when you play the map, and they'll automatically travel with the map if you upload it to the Steam Workshop.
+
+!!!info "Tip"
+	Keep your custom textures inside the `custom` folder (not loose in `textures`) so the name you paint with in Trenchbroom (e.g. `custom/your_texture`) matches what the game looks for.
+
 ### Why is the collision for my vt_breakable not working? 
 Breakables need to be **one brush per breakable**. For example, this will not work:
 
