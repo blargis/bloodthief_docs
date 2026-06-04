@@ -12,7 +12,7 @@ This guide is meant to be used like a wiki for you to reference for all your map
 
 ## Getting Set Up
 1. Download [Trenchbroom](https://github.com/TrenchBroom/TrenchBroom/releases/tag/v2025.3)
-2. Navigate to the folder where you downloaded Trenchbroom and click inside the Trenchbroom folder. Click inside the "games" folder. Download the [Bloodthief mapping assets](https://drive.google.com/file/d/1IHrSjtdWp4tyQuInjpUgVuiSBSwXTLnh/view?usp=drive_link). Unzip it, open it, and drag the "BloodthiefMapping" folder into the "games" folder mentioned above
+2. Navigate to the folder where you downloaded Trenchbroom and click inside the Trenchbroom folder. Click inside the "games" folder. Download the [Bloodthief mapping assets](https://drive.google.com/file/d/1EJCwpfn2qqMdu4Z0kc1seRDttNC1SqMr/view?usp=drive_link). Unzip it, open it, and drag the "BloodthiefMapping" folder into the "games" folder mentioned above
 3. Now open up the Trenchbroom.exe which is at the root of the trenchbroom folder
 4. Click New Map, then click Open Preferences
 5. You should see BloodthiefMapping as an option. Click it, and on the righthand side set the "Game Path" to the BloodthiefMapping folder that you put inside the games folder in step 2. So if you downloaded Trenchbroom to your Desktop, the path might be C:\users\yourname\Desktop\TheTrenchbroomFolderName\games\BloodthiefMapping
