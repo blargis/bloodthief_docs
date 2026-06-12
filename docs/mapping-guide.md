@@ -126,13 +126,9 @@ hub_map/                     <- the root map's folder
 			submap2_data.json
 ```
 
-3. Open the **root map** in Trenchbroom. On the `vt_end_level_area` that you want to lead to a submap, add a property called `next_map`. Set its value to the path of the next map **relative to the root map's folder**, without the `.map` extension. For the structure above, the value of `next_map` to reach `submap1` is:
+3. Open the **root map** in Trenchbroom. On the `vt_end_level_area` that you want to lead to a submap, add a property called `next_map`. Set its value to the path of the next map **relative to the root map's folder**, without the `.map` extension. For the structure above, the value of `next_map` to reach `submap1` is `submaps/submap1/submap1`
 
-```
-submaps/submap1/submap1
-```
-
-4. That's it! When the player reaches that end level area, the **Continue** button on the end level screen will load `submap1`.
+4. When the player reaches that end level area, the **Continue** button on the end level screen will load `submap1`.
 
 #### Chaining, hubs, and loops
 
