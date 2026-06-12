@@ -143,7 +143,7 @@ A few things to watch out for:
 * Every map name in the bundle has to be unique, and no submap can have the same name as the root, or their saves and leaderboards will clash.
 * If a submap doesn't have its own `textures/` folder it'll just use the root's.
 
-You only upload the root map. Everything in `submaps/` rides along with it, and every map gets its own leaderboard once it's on the Workshop.
+You only upload the root map. Everything in `submaps/` gets uploaded with it.
 
 ### Why is the collision for my vt_breakable not working? 
 Breakables need to be **one brush per breakable**. For example, this will not work:
