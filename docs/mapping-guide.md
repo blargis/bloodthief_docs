@@ -103,47 +103,47 @@ You can open your map's folder from the pause menu in-game via "Open Map Data Fo
 !!!info "Tip"
 	Keep your custom textures inside the `custom` folder (not loose in `textures`) so the name you paint with in Trenchbroom (e.g. `custom/your_texture`) matches what the game looks for.
 
-### How do I link multiple maps together (map bundles)?
-You can chain maps together so that finishing one map sends the player straight into the next when they hit **Continue** on the end level screen. This lets you build hub worlds, multi-level campaigns, branching paths, and loops, all published as a single Steam Workshop item.
+### How do I link maps together (map bundles)?
+You can link maps so that beating one drops you straight into the next when you hit Continue on the end level screen. This is how you'd make a hub world, or a few levels in a row.
 
-Start by making your maps **normally and separately**, just like any other map. Get each one working and playable on its own first. Once they're ready, decide which map is going to be the **root map** (the one players launch, and the one that appears in the maps list and on the Workshop) and which map or maps will be the **submaps** (the ones reached only by traversing from another map).
+Make all your maps normally first and get them working on their own. Then pick one to be the "root map" (the one people launch and see in the maps list) and the rest become "submaps" that you only reach by going through another map.
 
-1. In the **root map's** folder, create a folder called `submaps`.
-2. Copy each submap's folder into that `submaps` folder. The final structure looks like this:
+1. In the root map's folder, make a folder called `submaps`.
+2. Copy each submap's folder into it, so you end up with:
 
 ```
-hub_map/                     <- the root map's folder
+hub_map/
 	hub_map.map
 	hub_map_data.json
-	textures/                <- optional, root map's textures
+	textures/
 	submaps/
 		submap1/
 			submap1.map
 			submap1_data.json
-			textures/        <- optional, this submap's own textures
+			textures/
 		submap2/
 			submap2.map
 			submap2_data.json
 ```
 
-3. Open the **root map** in Trenchbroom. On the `vt_end_level_area` that you want to lead to a submap, add a property called `next_map`. Set its value to the path of the next map **relative to the root map's folder**, without the `.map` extension. For the structure above, the value of `next_map` to reach `submap1` is `submaps/submap1/submap1`
+3. Open the root map in Trenchbroom and find the `vt_end_level_area` you want to lead somewhere. Add a `next_map` property and set it to the path of the next map, relative to the root folder and without the `.map`. For the layout above, going to submap1 is `submaps/submap1/submap1`.
 
-4. When the player reaches that end level area, the **Continue** button on the end level screen will load `submap1`.
+Now when you reach that end level area and hit Continue, it loads submap1.
 
-#### Chaining, hubs, and loops
+You can do this from any map in the bundle, including pointing back at the hub:
 
-* **Submap to another submap:** On `submap1`'s `vt_end_level_area`, to send the player to `submap2`, set `next_map` to `submaps/submap2/submap2`
+* submap to another submap: `submaps/submap2/submap2`
+* back to the hub: just `hub_map` (the root map sits at the top, so its path is just its name)
 
-* **Submap back to the root (hub) map:** On a submap's `vt_end_level_area`, to send the player back to `hub_map`, set `next_map` to `hub_map`
+So a hub is the hub map pointing out to each submap, and each submap pointing back with `hub_map`.
 
-This is how you make a hub: the hub map's end level areas point into the submaps, and each submap points back to the hub.
+A few things to watch out for:
 
-!!!info "Naming rules"
-	* Each submap's `.map` and `_data.json` must share the same name (for example `submap1.map` plus `submap1_data.json`), exactly like a normal map. This is already the case for any map you made normally.
-	* **Map names must be unique within a bundle, and no submap may share the root map's name.** Names are how the game tells maps apart for completion data and leaderboards, so duplicates will collide.
+* Like any map, a submap's `.map` and `_data.json` have to share a name (`submap1.map`, `submap1_data.json`). That's already true for maps you made normally.
+* Every map name in the bundle has to be unique, and no submap can have the same name as the root, or their saves and leaderboards will clash.
+* If a submap doesn't have its own `textures/` folder it'll just use the root's.
 
-!!!info "Publishing"
-	You only publish (and players only see) the **root map**. The entire root folder, including everything in `submaps/`, is uploaded together, so your submaps travel with it automatically. Each map in the bundle, root and submaps alike, gets its own separate leaderboard once the bundle is on the Workshop.
+You only upload the root map. Everything in `submaps/` rides along with it, and every map gets its own leaderboard once it's on the Workshop.
 
 ### Why is the collision for my vt_breakable not working? 
 Breakables need to be **one brush per breakable**. For example, this will not work:
